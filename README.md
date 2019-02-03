@@ -14,7 +14,7 @@ If you want to know more about [TypeORM](https://github.com/typeorm/typeorm) or 
 
 ### Precaution about lazy option in the models (entities)
 
-As I was testing the code in the repository I came across an interesting behavious, when you saved a relation of many-to-many that have the option `lazy` set to true, then the relations won't save. According to [the github issue](https://github.com/typeorm/typeorm/issues/3004) this only happens on PG databases and a workaround to this could be
+As I was testing the code in the repository I came across an interesting behavious, when you saved a relation of many-to-many that have the option `lazy` set to true, then the relations won't save. According to [the github issue](https://github.com/typeorm/typeorm/issues/3004) this only happens on PG databases and a workaround to this could be first save the entities and the add the many-to-many relations.
 
 ```js
 const category = await connection.manager.findOne(Category, 1);
