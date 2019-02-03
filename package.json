@@ -1,5 +1,5 @@
 {
-  "name": "scafold-express-typeORM",
+  "name": "boilerplate-express-typeORM",
   "version": "0.0.0",
   "private": true,
   "scripts": {

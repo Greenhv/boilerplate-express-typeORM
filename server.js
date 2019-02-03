@@ -1,5 +1,6 @@
 require("dotenv").config();
 import { createConnection } from "typeorm";
+import "@babel/polyfill";
 
 createConnection().then(async connection => {
   const app = require("./app");
