@@ -1,4 +1,4 @@
-# This is a simple ES6/7 boilerplate to create an Express server with TypeORM
+# Simple Babel ES6/7 boilerplate to create an Express server with TypeORM
 
 ### Description
 
