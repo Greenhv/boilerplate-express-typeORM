@@ -11,3 +11,21 @@ On the other hand I add other libraries to help with the development like
 - [dotenv](https://github.com/motdotla/dotenv)
 
 If you want to know more about [TypeORM](https://github.com/typeorm/typeorm) or [Express](http://expressjs.com/en/4x/api.html) please follow their respective documentation.
+
+### Precaution about lazy option in the models (entities)
+
+As I was testing the code in the repository I came across an interesting behavious, when you saved a relation of many-to-many that have the option `lazy` set to true, then the relations won't save. According to [the github issue](https://github.com/typeorm/typeorm/issues/3004) this only happens on PG databases and a workaround to this could be
+
+```js
+const category = await connection.manager.findOne(Category, 1);
+const post = Object.assign(
+  new Post(),
+  {
+    title: "my post"
+  },
+  {
+    categories: Promise.resolve([category])
+  }
+);
+await connection.manager.save(post);
+```
