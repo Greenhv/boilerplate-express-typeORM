@@ -1,0 +1,20 @@
+{
+  "name": "default",
+  "type": "postgres",
+  "host": "127.0.0.1",
+  "port": 5432,
+  "username": "root",
+  "password": "root",
+  "database": "admin_db",
+  "synchronize": true,
+  "logging": true,
+  "logger": "advanced-console",
+  "entities": ["src/entity/*.js"],
+  "subscribers": ["src/subscriber/*.js"],
+  "migrations": ["src/migration/*.js"],
+  "cli": {
+    "entitiesDir": "src/entity",
+    "migrationsDir": "src/migration",
+    "subscribersDir": "src/subscriber"
+  }
+}
